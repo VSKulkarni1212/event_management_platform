@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('../images/a1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  padding: 30px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ebecf0;
+}
+
+.auth-container input,
+.auth-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.8);
+  color: #333;
+  font-size: 1em;
+}
+
+.auth-container select {
+  cursor: pointer;
+}
+
+.role-label {
+  color: #eee;
+  font-size: 0.9em;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 120, 212, 0.8);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: rgba(0, 95, 163, 0.9);
+}
+
+.auth-container p {
+  text-align: center;
+  font-size: 0.9em;
+  color: #eee;
+}
+
+.auth-container a {
+  color: #fff;
+  text-decoration: underline;
+}

@@ -1,0 +1,215 @@
+/* ================
+   Organizer Dashboard CSS
+   Path: assets/css/organizer.css
+   Background image location assumed: assets/images/b4.jpg
+   ================ */
+
+:root{
+  --indigo: #4b0082;
+  --navy: #0b1a40;     /* dark blue for headings */
+  --text: #1f2937;     /* slate-800 */
+  --muted: #475569;    /* slate-600 */
+  --primary: #2563eb;  /* blue */
+  --primary-700: #1d4ed8;
+  --neutral: #4b0082;  /* indigo for neutral buttons */
+  --neutral-700: #3a0065;
+  --danger: #ef4444;
+  --danger-700: #dc2626;
+  --logout: #111827;   /* very dark gray */
+  --logout-700: #0b1220;
+  --card-bg: rgba(255,255,255,0.92);
+}
+
+/* Reset-ish */
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: url('../images/b4.png') center / cover no-repeat fixed;
+}
+
+/* Optional subtle overlay to keep text readable on bright images */
+body::before{
+  content:"";
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.15);
+  pointer-events: none;
+}
+
+/* ===== Top Navbar ===== */
+.navbar{
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+  padding: 14px 22px;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.navbar h1{
+  margin: 0;
+  font-size: 18px;
+  color: var(--indigo);
+}
+.role-badge{
+  display: inline-block;
+  margin-left: 6px;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--indigo);
+  background: #ede9fe;
+  border-radius: 999px;
+}
+
+/* ===== Generic Buttons (works for <a> and <button>) ===== */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  text-decoration: none;            /* no underline */
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  user-select: none;
+  white-space: nowrap;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+
+.btn-primary{ background: var(--primary); color: #fff; }
+.btn-primary:hover{ background: var(--primary-700); }
+
+.btn-neutral{ background: var(--neutral); color: #fff; }
+.btn-neutral:hover{ background: var(--neutral-700); }
+
+.btn-danger{ background: var(--danger); color: #fff; }
+.btn-danger:hover{ background: var(--danger-700); }
+
+.btn-logout{ background: var(--logout); color: #fff; }
+.btn-logout:hover{ background: var(--logout-700); }
+
+/* ===== Main container (no big box behind cards) ===== */
+.container{
+  max-width: 1200px;
+  margin: 20px auto 40px;
+  padding: 0 16px;
+  /* no background here – cards float on the page bg */
+}
+
+/* ===== Section head: centered title + create button next to it ===== */
+.container-head{
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* center whole group */
+  gap: 14px;
+  margin: 16px 0 10px;
+  text-align: center;
+}
+.container-head h2{
+  margin: 0;
+  font-size: 28px;
+  color: var(--navy);       /* dark blue/black as requested */
+}
+
+/* ===== Cards grid ===== */
+.event-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+  margin-top: 14px;
+}
+
+/* ===== Event card ===== */
+.event-card{
+  background: var(--card-bg);   /* readable on the photo bg */
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.event-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+}
+.event-img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+.event-body{ padding: 14px 14px 0; }
+.event-title{
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: var(--indigo);
+}
+.event-desc{
+  margin: 0 0 10px;
+  color: #334155; /* slate-700 */
+  line-height: 1.45;
+}
+.event-meta{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding-bottom: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Actions pinned to the bottom of the card */
+.event-actions{
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 12px 14px;
+  background: rgba(248,250,252,0.9);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.event-actions form{ display: inline; } /* keep form buttons inline */
+
+/* Empty state */
+.empty-state{
+  text-align: center;
+  padding: 32px 16px 40px;
+  color: #f8fafc;              /* light on bg */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+  font-size: 16px;
+}
+
+/* Small screens */
+@media (max-width: 480px){
+  .container-head{
+    flex-direction: column;
+  }
+}
+
+.event-actions .btn {
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 18px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  height: 40px;          /* 🔹 fixed button height */
+  line-height: 20px;     /* 🔹 ensures text stays vertically centered */
+  white-space: nowrap;   /* 🔹 prevents "View Attendees" from breaking into 2 lines */
+}
+
+/*for edit_event.php css */
+

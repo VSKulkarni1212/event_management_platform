@@ -1,0 +1,80 @@
+/* assets/css/create_event.css
+   If you save the file here, the background image path below assumes:
+     project_root/assets/images/b4.png
+*/
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('../images/b4.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Translucent form box */
+.form-container {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 12px;
+  width: 420px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 18px;
+  color: #1e3d7b;
+}
+
+/* Inputs */
+.form-container input,
+.form-container textarea,
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-container textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Button */
+.form-container button {
+  background: #1e69de;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background .2s ease, transform .06s;
+}
+
+.form-container button:hover {
+  background: #1553aa;
+  transform: translateY(-1px);
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 12px;
+  color: #1e69de;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-btn:hover { text-decoration: underline; }
+
+.error {
+  color: #c53030;
+  margin-bottom: 12px;
+  font-weight: 600;
+}

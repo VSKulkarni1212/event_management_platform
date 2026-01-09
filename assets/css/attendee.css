@@ -1,0 +1,103 @@
+/* Background and global styles */
+body {
+  font-family: Arial, sans-serif;
+  background: url('../images/attendee_background.avif') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dashboard container */
+.dashboard-container {
+  padding: 20px;
+}
+
+/* Logout button at top right */
+.logout-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #6a1b9a;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.logout-link:hover {
+  background: #4a148c;
+}
+
+/* Main heading */
+h2 {
+  color: #4a148c; /* Darker purple */
+}
+
+/* Events grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Event card */
+.event-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.event-card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.event-card h4 {
+  margin-top: 0;
+}
+
+/* Status messages */
+.error-msg { color: red; }
+.success-msg { color: green; }
+.countdown { color: blue; }
+.past-event { color: gray; }
+.rsvp-status { color: green; }
+.full-event { color: red; }
+.locked { color: gray; }
+
+/* Buttons */
+.rsvp-btn, .cancel-btn {
+  background: #6a1b9a;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: red;
+}
+
+.rsvp-btn:hover {
+  background: #4a148c;
+}
+
+.cancel-btn:hover {
+  background: darkred;
+}
+
+/* Remove underline from organizer email */
+.event-card a {
+  text-decoration: none;
+  color: #6a1b9a;
+}
+
+.event-card a:hover {
+  text-decoration: underline;
+}
